@@ -37,8 +37,9 @@ jobs:
         run: |
           make deps -C src TARGET=agent -j2
           make -C src TARGET=agent -j2
+          ls -alh
       - name: Upload agent as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.PACKAGE_NAME }}
-          path: ./build
+          path: ./install.sh
