@@ -41,5 +41,5 @@ jobs:
       - name: Upload agent as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PACKAGE_NAME }}
+          name: install.sh
           path: ./install.sh
