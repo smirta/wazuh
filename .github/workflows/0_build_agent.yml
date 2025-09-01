@@ -38,8 +38,13 @@ jobs:
           make deps -C src TARGET=agent -j2
           make -C src TARGET=agent -j2
           ls -alh
-      - name: Upload agent as artifact
+      - name: Upload install.sh as artifact
         uses: actions/upload-artifact@v4
         with:
           name: install.sh
           path: ./install.sh
+      - name: Upload wazuh agent files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wazuh-agent-files
+          path: ./src/external
